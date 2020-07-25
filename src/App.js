@@ -1,13 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./App.scss";
 import { api } from "./utils/api";
-import UsersList from "./components/users/UsersList";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
-  Link,
 } from "react-router-dom";
 
 import Login from "./components/Login";
@@ -22,7 +20,6 @@ function App() {
         headers: { token: localStorage.token },
       });
       res.data === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
-      console.log("sod sa app.js");
     } catch (err) {
       setIsAuthenticated(false);
       console.error(err.message);
@@ -39,7 +36,7 @@ function App() {
   return (
     <Fragment>
       <Router>
-        <Navbar setAuth={setAuth}></Navbar>
+        <Navbar setAuth={setAuth} auth={isAuthenticated}></Navbar>
         <Switch>
           <Route exact path="/">
             {isAuthenticated ? <Home></Home> : <Redirect to="/login" />}
@@ -48,7 +45,7 @@ function App() {
             {!isAuthenticated ? (
               <Login setAuth={setAuth}></Login>
             ) : (
-              <Redirect to="/home" />
+              <Redirect to="/" />
             )}
           </Route>
           <Route exact path="/register">
@@ -56,7 +53,7 @@ function App() {
             {!isAuthenticated ? (
               <Register setAuth={setAuth}></Register>
             ) : (
-              <Redirect to="/home" />
+              <Redirect to="/" />
             )}
           </Route>
         </Switch>

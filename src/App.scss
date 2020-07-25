@@ -1,21 +1,73 @@
 $violet: #7952b3;
+$violet-light: #a378e4;
 $violet-dark: #664597;
 
+.no-box-shadow {
+  box-shadow: none !important;
+}
 .text-violet {
   color: $violet;
 }
 .bg-violet {
   background-color: $violet;
 }
+.btn-outline-violet {
+  color: $violet !important;
+  background-color: transparent;
+  border-color: $violet !important;
+  transition: all 0.3s;
+}
+.btn-outline-violet:hover {
+  color: #fff !important;
+  background-color: $violet-dark !important;
+  border-color: $violet-dark !important;
+  transition: all 0.3s;
+}
+.btn-outline-violet:focus {
+  color: $violet !important;
+  box-shadow: none !important;
+  transition: all 0.3s;
+}
+.btn-outline-violet:focus:hover {
+  color: #fff !important;
+  background-color: $violet-dark !important;
+  border-color: $violet-dark !important;
+  transition: all 0.3s;
+}
+
+.btn-violet {
+  color: #fff !important;
+  background-color: $violet !important;
+  border-color: $violet !important;
+  transition: all 0.3s;
+}
+.btn-violet:hover {
+  color: #fff !important;
+  background-color: $violet-dark !important;
+  border-color: $violet-dark !important;
+  transition: all 0.3s;
+}
+.btn-violet:focus {
+  color: #fff !important;
+  box-shadow: none !important;
+  transition: all 0.3s;
+}
+.pointer {
+  cursor: pointer;
+}
+.hover-link:hover {
+  color: $violet-dark !important;
+}
 /* BASIC */
 
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  background-color: rgb(241, 244, 248) !important;
 }
 
 a {
-  color: #92badd;
+  color: $violet-light !important;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -265,13 +317,13 @@ input[type="date"]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: $violet-light;
   content: "";
   transition: width 0.2s;
 }
 
 .underlineHover:hover {
-  color: #0d0d0d;
+  color: $violet-dark;
 }
 
 .underlineHover:hover:after {
@@ -286,4 +338,10 @@ input[type="date"]:placeholder {
 
 #icon {
   width: 60%;
+}
+
+// Card
+
+.card-max-width-540 {
+  max-width: 540px;
 }
