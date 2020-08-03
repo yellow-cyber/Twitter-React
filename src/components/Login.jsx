@@ -39,7 +39,7 @@ export default function Login({ setAuth }) {
             <input
               type="text"
               id="login"
-              className="fadeIn second"
+              className="fadeIn second rounded-pill"
               name="username"
               placeholder="Username"
               value={username}
@@ -48,13 +48,17 @@ export default function Login({ setAuth }) {
             <input
               type="password"
               id="password"
-              className="fadeIn third"
+              className="fadeIn third rounded-pill"
               name="password"
               placeholder="Password"
               value={password}
               onChange={(e) => onChange(e)}
             />
-            <input type="submit" className="fadeIn fourth" value="Log In" />
+            <input
+              type="submit"
+              className="fadeIn fourth rounded-pill"
+              value="Log In"
+            />
           </form>
 
           <div id="formFooter">

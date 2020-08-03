@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import User from "./User";
 import { api } from "../../utils/api";
-function UserList({ setFollowToggle }) {
+function UserList({ setProfileUpdate }) {
   const [users, setUsers] = useState([]);
   const getUsers = async () => {
     const res = await api.get("/who-to-follow", {
@@ -51,7 +51,7 @@ function UserList({ setFollowToggle }) {
           <User
             key={user.id}
             user={user}
-            setFollowToggle={setFollowToggle}
+            setProfileUpdate={setProfileUpdate}
           ></User>
         );
       })}

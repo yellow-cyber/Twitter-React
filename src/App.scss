@@ -2,6 +2,9 @@ $violet: #7952b3;
 $violet-light: #a378e4;
 $violet-dark: #664597;
 
+textarea {
+  overflow: hidden !important;
+}
 .no-box-shadow {
   box-shadow: none !important;
 }

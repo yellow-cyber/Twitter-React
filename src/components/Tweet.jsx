@@ -29,6 +29,8 @@ export default function Tweet({ setFetching }) {
             {" "}
             <textarea
               className="form-control border-0 no-box-shadow"
+              maxLength="300"
+              minLength="8"
               id="tweetForm"
               rows="1"
               placeholder="What's happening?"

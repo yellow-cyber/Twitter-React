@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Tweet from "./Tweet";
 import TweetsList from "./TweetsList";
 
-export default function Feed() {
+export default function Feed({ setProfileUpdate }) {
   const [fetching, setFetching] = useState(false);
 
   return (
-    <div className="py-2 px-3 border-0">
+    <div className="pb-2 px-3 border-0">
       <div className="row">
         <div className="col-12 card border-0 ">
           <div className="h6 border-bottom py-3">Home</div>
@@ -18,6 +18,7 @@ export default function Feed() {
           <TweetsList
             fetching={fetching}
             setFetching={setFetching}
+            setProfileUpdate={setProfileUpdate}
           ></TweetsList>
         </div>
       </div>

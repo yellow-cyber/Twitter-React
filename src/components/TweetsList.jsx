@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import TweetCard from "./TweetCard";
 import { api } from "../utils/api";
 
-export default function TweetsList({ fetching, setFetching }) {
+export default function TweetsList({
+  fetching,
+  setFetching,
+  setProfileUpdate,
+}) {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
@@ -12,9 +16,10 @@ export default function TweetsList({ fetching, setFetching }) {
       });
       setTweets(res.data);
       setFetching(false);
+      setProfileUpdate(true);
     }
     getUsers();
-  }, [fetching, setFetching]);
+  }, [fetching, setFetching, setProfileUpdate]);
   return (
     <div>
       {tweets.map((tweet) => {

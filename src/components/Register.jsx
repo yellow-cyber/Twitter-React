@@ -37,7 +37,7 @@ export default function Register({ setAuth }) {
           <form onSubmit={onSubmitForm}>
             <input
               type="text"
-              className="fadeIn second"
+              className="fadeIn second rounded-pill"
               name="displayName"
               placeholder="Display Name"
               value={displayName}
@@ -46,7 +46,7 @@ export default function Register({ setAuth }) {
             <input
               type="text"
               id="register"
-              className="fadeIn second"
+              className="fadeIn second rounded-pill"
               name="username"
               placeholder="Username"
               value={username}
@@ -55,7 +55,7 @@ export default function Register({ setAuth }) {
             <input
               type="password"
               id="password"
-              className="fadeIn third"
+              className="fadeIn third rounded-pill"
               name="password"
               placeholder="Password"
               value={password}
@@ -64,13 +64,17 @@ export default function Register({ setAuth }) {
             <input
               type="password"
               id="password"
-              className="fadeIn third"
+              className="fadeIn third rounded-pill"
               name="confirmPassword"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => onChange(e)}
             />
-            <input type="submit" className="fadeIn fourth" value="Register" />
+            <input
+              type="submit"
+              className="fadeIn fourth rounded-pill"
+              value="Register"
+            />
           </form>
 
           <div id="formFooter">

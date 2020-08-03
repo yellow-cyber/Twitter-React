@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../utils/api";
 
-export default function Profile({ followToggle, setFollowToggle }) {
+export default function Profile({ profileUpdate, setProfileUpdate }) {
   const [user, setUser] = useState({});
 
   const getUser = async () => {
@@ -24,8 +24,8 @@ export default function Profile({ followToggle, setFollowToggle }) {
   } = user;
   useEffect(() => {
     getUser();
-    setFollowToggle(false);
-  }, [followToggle, setFollowToggle]);
+    setProfileUpdate(false);
+  }, [profileUpdate, setProfileUpdate]);
 
   return (
     <div className="py-2 px-3 border-0 shadow-sm card">

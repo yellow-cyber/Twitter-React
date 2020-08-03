@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { api } from "../../utils/api";
 
-function User({ user, setFollowToggle }) {
+function User({ user, setProfileUpdate }) {
   const { displayName, username, id } = user;
   const [followed, setFollowed] = useState(false);
 
@@ -12,7 +12,7 @@ function User({ user, setFollowToggle }) {
         headers: { token: localStorage.token },
       });
       setFollowed(!followed);
-      setFollowToggle(true);
+      setProfileUpdate(true);
     } catch (error) {
       console.error(error.message);
     }
